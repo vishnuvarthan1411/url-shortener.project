@@ -3,6 +3,7 @@ package com.example.URL.Service;
 import com.example.URL.DTO.CreateUrlRequest;
 import com.example.URL.DTO.CreateUrlResponse;
 import com.example.URL.Entity.Url;
+import com.example.URL.Exception.UrlNotFoundException;
 import com.example.URL.Repository.UrlRepository;
 import com.example.URL.Util.Base62Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class UrlService {
             Url url = result.get();
             return url.getOriginalUrl();
         } else {
-            throw new RuntimeException("Short URL not found");
+            throw new UrlNotFoundException("Short URL not found: " + shortCode);
         }
     }
 }
