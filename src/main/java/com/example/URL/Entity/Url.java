@@ -16,7 +16,6 @@ public class Url {
     private String shortCode;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-
     @Column(name = "expires_at")
     private LocalDateTime expiresAt;
 
